@@ -1,8 +1,13 @@
 package Stack;
 import java.util.Stack;
 
-//Objective of the program is to get longest valid paranthesis sequence
-public class StackMaxLenghtOfCorrectBraces {
+/*Objective of the program is to get longest valid 
+ * parentheses sequence
+ * () : 2
+ * ()()() : 6
+ * ()())()()() : 6 ( from 6th bracket till 11th).
+ * (((()))))((((()())))) :  20
+*/public class StackMaxLenghtOfCorrectBraces {
 		
 	static int getLengthOfLongestValidSet(String prmString)
 	{
@@ -45,7 +50,7 @@ public class StackMaxLenghtOfCorrectBraces {
 	
 	public static void main(String[] args)
 	{			
-		String s = "()))()()()((";
+		String s = "(((()))))((((()()))))";
 		System.out.println("Longest valid set of brackets : "+ getLengthOfLongestValidSet(s));
 	}
 }

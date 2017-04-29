@@ -1,63 +1,75 @@
 package Stack;
 import java.util.Stack;
 
+/*Objective is to check if the input string of 
+ * parentheses are in proper sequence or not
+ * Example : 
+ * ( : Not in sequence.
+ * ()) : Not in sequence.
+ * (({(}))) : Not in sequence.
+ * (){}[] : In sequence.
+ * ({({[]})(){}}) : In sequence.
+ * */
+
 public class StackBracketImplementation {
 	public static void main(String[] args) {
-		String data = "()(()[])";
+		String data = "({({[]})(){}})";
+		boolean evalParanthesisVal = evalParanthesis(data);
 		
-		char[] dataC = data.toCharArray();
-		boolean evalParanthesisValue = evalParanthesis(dataC);
-		if(evalParanthesisValue == true)
-			System.out.println("Brackets are good");
+		if(evalParanthesisVal == true)
+			System.out.println("Brackets are in sequence.");
 		else
-			System.out.println("Brackets are not good");
+			System.out.println("Brackets are not in sequence");
 	}
-	static boolean evalParanthesis(char[] brackets)
+	static boolean evalParanthesis(String string)
 	{				
-		if(brackets.length % 2 != 0)
-		{
+		if(string == null)
 			return false;
-		}
 		
-		boolean IsBracesOk;
-		boolean PairCount = false;
+		if(string.length() % 2 != 0)
+			return false;
+				
+		char[] brackets = string.toCharArray();
+		boolean IsBracesInSeq = false;		
 		Stack<Character> stack = new Stack<Character>();
-		for(char brace : brackets)
+		for(char bracket : brackets)
 		{						
-			if(brace == '(' || brace == '{' || brace == '['){
-				stack.push(brace);	
-				PairCount = false;
+			if(bracket == '(' || bracket == '{' || bracket == '['){
+				stack.push(bracket);
 			}
-			else if(!stack.isEmpty())
-			{
-				if(brace == ')' || brace == '}' || brace == ']')
+			
+			else if(bracket == ')' || bracket == '}' || bracket == ']')
 				{
-					char bracketPopped = stack.pop();
-					if((brace == ')' && bracketPopped == '('))
+					if(!stack.isEmpty())
 					{
-						IsBracesOk = true; PairCount = true;
+						char bracketPopped = stack.pop();				
+						if((bracket == ')' && bracketPopped == '('))
+							IsBracesInSeq = true;
+						
+						else if((bracket == '}') && (bracketPopped == '{'))
+							IsBracesInSeq = true;
+						
+						else if((bracket == ']') && (bracketPopped == '['))
+							IsBracesInSeq = true;
+						
+						else 
+						{
+							IsBracesInSeq = false;						
+							break;
+						}
 					}
-					else if((brace == '}') && (bracketPopped == '{'))
+					else
 					{
-						IsBracesOk = true; PairCount = true;
-					}
-					else if((brace == ']') && (bracketPopped == '['))
-					{
-						IsBracesOk = true; PairCount = true;
-					}
-					else 
-					{
-						IsBracesOk = false;
-						PairCount = false;
+						System.out.println("opening brackets stack empty");
+						IsBracesInSeq = false;						
 						break;
 					}
-				}	
-			}
+				}				
 		}	
 		
-		if(PairCount == false)
-		return IsBracesOk = false;
+		if(IsBracesInSeq == false)
+			return false;
 		else
-			return IsBracesOk = true;
+			return true;
 	}
 }
