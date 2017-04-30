@@ -1,6 +1,10 @@
 package Stack;
 import java.util.Stack;
 
+/*Objective is to get minimum value from stack in O(1) time
+ * 
+ * Here I have added and deleted values multiple time to understand 
+ * functionality.*/
 public class StackMinValue {
 	
 	Stack<Integer> mainStack = new Stack<Integer>();
@@ -38,7 +42,7 @@ public class StackMinValue {
 		if(mainStack.isEmpty() && auxStack.isEmpty())			
 			return;
 		
-		//remove main stack value and aux stack value
+		//removing main stack value and aux stack value
 		else
 		{
 			mainStack.pop();

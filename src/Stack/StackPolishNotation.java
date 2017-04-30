@@ -3,10 +3,10 @@ import java.util.Stack;
 public class StackPolishNotation {
 	public static void main(String[] args) {
 		String[] tokens = new String[] { "2", "1", "+", "3", "*" };
-		System.out.println(evalRPN(tokens));
+		System.out.println(evalNotation(tokens));
 	}
 	
-	static int evalRPN(String[] tokens)
+	static int evalNotation(String[] tokens)
 	{
 		Stack<String> stack = new Stack<String>();
 		String operators = "+-*/";
