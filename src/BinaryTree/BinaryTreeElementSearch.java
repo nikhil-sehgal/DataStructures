@@ -2,7 +2,7 @@ package BinaryTree;
 /*Objective is to search an element in a Binary Tree
  * I solved the problem without recursion
  * Current tree:
- * 				  1
+ * 			      1
 			    /   \
 			  2 	  3
 			 / \ 	 / \
