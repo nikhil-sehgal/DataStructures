@@ -1,5 +1,5 @@
 package Array;
-/*Objective is to find element occurring odd times in array
+/*Objective is to find count of elements occurring odd times in array
  * Example : In array {2, 3, 5, 4, 5, 2, 4, 3,  5, 2, 4, 4, 2}
  * 5 is occurring odd times.
  * */
