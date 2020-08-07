@@ -103,10 +103,11 @@ public class BinaryTreeElementSearch {
 		{
 			elementToFind = i;
 			
-			if(binaryTreeElementSearch.SearchElement(elementToFind) == true)
-				System.out.println("Element "+ i +" found in tree");
+			if(binaryTreeElementSearch.SearchElement(elementToFind))
+				System.out.println("Element "+ elementToFind +" found in tree");
 			else
-				System.out.println("Element "+ i +" not found in tree");
+				System.out.println("Element "+ elementToFind +" not found in tree");
 		}
 	}
 }
+
