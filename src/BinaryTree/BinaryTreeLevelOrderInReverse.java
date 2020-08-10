@@ -2,7 +2,7 @@ package BinaryTree;
 /* Objective is to print the binary tree bottom to top. 
  * Example:  
  * Current tree:
- * 				  1
+ * 			      1
 			    /   \
 			  2 	  3
 			 / \ 	 / \ 
