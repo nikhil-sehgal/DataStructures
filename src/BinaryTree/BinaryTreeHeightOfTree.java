@@ -4,15 +4,15 @@ package BinaryTree;
 * * 
 * Example:  
 * Current tree:
-* 				  1
+* 			      1
 			    /   \
 			  2 	  3
 			 / \ 	 / 
 			4   5	6     
-		   / 
-		  7  
- 		 /
- 		8	
+		       / 
+		      7  
+ 		     /
+ 		    8	
  			 
     In Above tree:
     Height of left SubTree 4 : 1-2-4-7-8
